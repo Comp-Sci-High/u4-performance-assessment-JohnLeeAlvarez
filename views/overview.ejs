@@ -28,23 +28,27 @@
     <section class = "reviews">
 
 
-           <% for(let i = 0; i < Tech.length;i++ ) { %>
+           <% for(let i = 0; i < Tech.length; i++ ) { %>
+
             <div class="review-card">
-<img src="<%= Tech.imageUrl %>"  alt=" <%= Tech.productName%> ">
+<img src="<%= Tech[i].imageUrl %>"  alt=" <%= Tech[i].productName%> ">
+
+
    <!-- allows data in review to be put in HTML -->
 <h2> <%= Tech[i].productName %> </h2>
-<p><strong>releaseDate:</strong>   <%= Tech[i].productName %></p>
-<p><strong>manufacturer:</strong>   <%= Tech[i].manufacturer %> </p>
+<p><strong>releaseDate:</strong>   <%= Tech[i].releaseDate %>  </p>
+<p><strong>manufacturer:</strong>   <%= Tech[i].manufacturer %>  </p>
 <p><strong>price:</strong>   <%= Tech[i].price %> </p>
 <p><strong>reviewRating:</strong>  <%= Tech[i].reviewRating %> </p>
 
-
-   <!-- when clicked Read more it brings you to page based on the id of the Tech you picked -->
-
-    <a href="/tech/<%= i %>">Read more</a>
+    <a href= <%= Tech[i].path %>>Read more</a>
         </div>
-        <%  } %>
+        <% } %>
 
+
+
+
+   
      </section>
     </main>
   </body>

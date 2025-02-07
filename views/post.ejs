@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Use the category attribute to set the tab name -->
+
     <title> Tech Reviews </title>
-    <!-- Link to style.css -->
+
     <link rel = "stylesheet" href = "/styles.css">
   </head>
 
@@ -26,16 +26,15 @@
 
     <main>
 
-          <!-- allows data in review to be put in HTML -->
-        <h1> <%= Tech.productName %> </h1>
+        <h1> <%= productName %> </h1>
   
-<img src="<%= Tech.imageUrl %>"  alt=" <%= Tech.productName%> ">
+<img src= "<%= imageUrl %>"  alt=" <%= productName %> ">
 
 
-<p><strong>releaseDate:</strong>   <%= Tech.productName %></p>
-<p><strong>manufacturer:</strong>   <%= Tech.manufacturer %> </p>
-<p><strong>price:</strong>   <%= Tech.price %> </p>
-<p><strong>reviewRating:</strong>  <%= Tech.reviewRating%> </p>
+<p><strong>releaseDate:</strong>   <%= productName %></p>
+<p><strong>manufacturer:</strong>   <%= manufacturer %> </p>
+<p><strong>price:</strong>   <%= price %> </p>
+<p><strong>reviewRating:</strong>  <%= reviewRating %> </p>
 
         </div>
      </section>

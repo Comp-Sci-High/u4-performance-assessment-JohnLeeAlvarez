@@ -5,6 +5,7 @@ const app = express()
 const techReviews ={  
   Tech: [
     {
+      path: "/tech/0",
     productName: "XPhone 15 Pro",
     releaseDate: "2024-09-20",
     manufacturer: "XTech",
@@ -13,6 +14,7 @@ const techReviews ={
     imageUrl: "https://example.com/xphone15pro.jpg"
   },
     {
+      path: "/tech/1",
     productName: "GalaxyTab X2",
     releaseDate: "2024-08-15",
     manufacturer: "SamTech",
@@ -21,6 +23,7 @@ const techReviews ={
     imageUrl: "https://example.com/galaxytabx2.jpg"
     },
     {
+      path: "/tech/2",
     productName: "VisionGo AR Glasses",
     releaseDate: "2024-07-10",
     manufacturer: "NeoVision",
@@ -29,6 +32,7 @@ const techReviews ={
     imageUrl: "https://example.com/visiongo.jpg"
     },
     {
+      path: "/tech/3",
     productName: "HyperBook X500",
     releaseDate: "2024-06-25",
     manufacturer: "Hypertron",
@@ -37,6 +41,7 @@ const techReviews ={
     imageUrl: "https://example.com/hyperbookx500.jpg"
     },
     {
+      path: "/tech/4",
     productName: "SmartFit Band 6",
     releaseDate: "2024-05-18",
     manufacturer: "FitWare",
@@ -45,6 +50,7 @@ const techReviews ={
     imageUrl: "https://example.com/smartfitband6.jpg"
     },
     {
+      path: "/tech/5",
     productName: "QuantumBuds Pro",
     releaseDate: "2024-10-05",
     manufacturer: "SoundNova",
@@ -53,6 +59,7 @@ const techReviews ={
     imageUrl: "https://example.com/quantumbudspro.jpg"
     },
     {
+      path: "/tech/6",
     productName: "c",
     releaseDate: "2024-11-12",
     manufacturer: "GameSphere",
@@ -61,6 +68,7 @@ const techReviews ={
     imageUrl: "https://example.com/gameboxultra2.jpg"
     },
     {
+      path: "/tech/7",
     productName: "EcoCharge 50K Power Bank",
     releaseDate: "2024-08-30",
     manufacturer: "GreenVolt",
@@ -69,6 +77,7 @@ const techReviews ={
     imageUrl: "https://example.com/ecocharge50k.jpg"
     },
     {
+      path: "/tech/8",
     productName: "NanoDrone Air S3",
     releaseDate: "2024-12-01",
     manufacturer: "SkyGadget",
@@ -77,6 +86,7 @@ const techReviews ={
     imageUrl: "https://example.com/nanodroneairs3.jpg"
     },
     {
+      path: "/tech/9",
     productName: "CyberCam 8K Pro",
     releaseDate: "2024-07-22",
     manufacturer: "LensTech",
@@ -112,13 +122,11 @@ app.get ("/tech", (req, res) =>{
   res.render("overview.ejs", techReviews)
 })
 
-// This takes the id from the request URL and than coverts it into integer with parseInt
-//Then it stores the number assign into the id
 app.get ("/tech/:id", (req, res) =>{
  const id = parseInt(req.params.id)
  const review = techReviews[id]
- //let us view the contenet
- res.render("overview.ejs", techReviews.Tech[id] )
+
+ res.render("post.ejs", techReviews.Tech[id] )
 })
 
 
