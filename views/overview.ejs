@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use the category attribute to set the tab name -->
+    <title> Tech Reviews </title>
+    <!-- Link to style.css -->
+    <link rel = "stylesheet" href = "/styles.css">
+  </head>
+
+
+
+
+  <body>
+
+    <header>
+        <nav>
+            <ul> 
+            <li><a href="/"> Home</a></li>
+            <li><a href="/tech"> Tech </a></li>
+            <li><a href="/brand"> Brand </a></li>
+
+            </ul>
+        </nav>
+    </header>
+ 
+<main>
+    <h1> Latest Tech Reviews</h1>
+    <section class = "reviews">
+        <% techReviews.forEach(( review, id) => { %>
+            <div class="review-card">
+<img src="<%= review.imageUrl %>"  alt=" <%= review.productName%> ">
+<h2> <%= review.productName %> </h2>
+
+<p><strong>releaseDate:</strong>   <%= review.productName %></p>
+<p><strong>manufacturer:</strong>   <%= review.manufacturer %> </p>
+<p><strong>price:</strong>   <%= review.price %> </p>
+<p><strong>reviewRating:</strong>  <%= review.reviewRating%> </p>
+
+    <a href="/tech/<%= id %>">Read more</a>
+
+        </div>
+        <%  }) %>
+
+     </section>
+    </main>
+  </body>
+</html>
