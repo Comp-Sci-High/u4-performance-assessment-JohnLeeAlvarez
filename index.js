@@ -2,7 +2,8 @@
 const express = require('express')
 const app = express()
 
-const techReviews = [
+const techReviews ={  
+  Tech: [
     {
     productName: "XPhone 15 Pro",
     releaseDate: "2024-09-20",
@@ -10,7 +11,7 @@ const techReviews = [
     price: "$999",
     reviewRating: 4.7,
     imageUrl: "https://example.com/xphone15pro.jpg"
-    },
+  },
     {
     productName: "GalaxyTab X2",
     releaseDate: "2024-08-15",
@@ -83,8 +84,8 @@ const techReviews = [
     reviewRating: 4.8,
     imageUrl: "https://example.com/cybercam8kpro.jpg"
     }
-    ];
-    
+  ]
+}
 
 
 // Task 1: Set the view engine to EJS. 
@@ -108,13 +109,16 @@ app.get ("/", (req, res) =>{
 })
 
 app.get ("/tech", (req, res) =>{
-  res.render("overview", { techReviews })
+  res.render("overview.ejs", techReviews)
 })
 
+// This takes the id from the request URL and than coverts it into integer with parseInt
+//Then it stores the number assign into the id
 app.get ("/tech/:id", (req, res) =>{
  const id = parseInt(req.params.id)
  const review = techReviews[id]
- res.render("post", { review } )
+ //let us view the contenet
+ res.render("overview.ejs", techReviews.Tech[id] )
 })
 
 
